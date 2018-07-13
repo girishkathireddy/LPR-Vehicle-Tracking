@@ -15,11 +15,17 @@ import { MatInputModule, MatButtonModule, MatSelectModule, MatIconModule } from 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material';
 
+//Maps
+import { CommonModule } from '@angular/common';
+import { AgmCoreModule } from '@agm/core';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
-    InformationTableComponent
+    InformationTableComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -35,7 +41,12 @@ import { MatTableModule } from '@angular/material';
     // MatButtonModule,
     // MatSelectModule,
     // MatIconModule,
-    MatTableModule
+    MatTableModule,
+    CommonModule,
+    FormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDVUkaslouCX4g55Q0thcJvPgwje8-nAXw'
+    })
 
 
   ],

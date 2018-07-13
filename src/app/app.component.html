@@ -1,6 +1,34 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 <app-nav></app-nav>
+
+<!-- <agm-map [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map> -->
+
+ <agm-map
+      [latitude]="lat"
+      [longitude]="lng"
+      >
+
+
+      <agm-marker
+        *ngFor="let coordinate of coordinates; let i=index"
+        [latitude]="coordinate.lat"
+        [longitude]="coordinate.lng"
+      ></agm-marker>
+      <agm-polyline
+       [visible]="true"
+       [strokeWeight]="3">
+        <agm-polyline-point
+          *ngFor="let coordinate of coordinates; let i=index"
+          [latitude]="coordinate.lat"
+          [longitude]="coordinate.lng">
+
+        </agm-polyline-point>
+      </agm-polyline>
+
+     </agm-map>
 <app-information-table></app-information-table>
 
 
