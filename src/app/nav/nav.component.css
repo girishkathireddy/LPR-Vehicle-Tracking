@@ -1,0 +1,33 @@
+/*Header Nav*/
+
+#header-nav{
+    min-height: 80px;
+    background-color: #fff !important;
+    z-index: 1000;
+    margin-bottom: 10px;
+    box-shadow: 0 8px 6px -6px #999;
+}
+
+header .icon-logo-title{
+    font-size: 26px;
+    color:#112e60;
+    font-family:'Kalam', cursive;
+    padding-left: 10px;
+    padding-top: 25px;
+    position: absolute;
+}
+
+header .navbar-brand{
+    display: block;
+    min-height: 80px;
+    position: relative;
+}
+
+header .navbar-right {
+    padding-top: 15px;
+    font-size: 0.8em;
+}
+
+header .navbar-default {
+    border: none;
+}
