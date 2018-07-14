@@ -27,7 +27,7 @@ export class InformationTableComponent implements OnInit {
   }
 
 
-   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+   displayedColumns: string[] = ['position', 'name', 'latitude', 'longitude'];
 
 
 }

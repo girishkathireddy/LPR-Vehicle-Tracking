@@ -19,16 +19,28 @@ import { MatTableModule } from '@angular/material';
 import { CommonModule } from '@angular/common';
 import { AgmCoreModule } from '@agm/core';
 
+import { AgmDirectionModule } from 'agm-direction'   // agm-direction
+
+import { GeocodeService } from './geocode.service';
+import { SearchComponent } from './search/search.component';   //Geolocation
+
+import { ReactiveFormsModule } from '@angular/forms';
+import { AppRoutingModule } from './/app-routing.module';  // <-- #1 import module
+
+import {FormService} from './form-service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     InformationTableComponent,
+    SearchComponent,
 
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
 
     // Navigation
     CollapseModule.forRoot(),
@@ -46,11 +58,13 @@ import { AgmCoreModule } from '@agm/core';
     FormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDVUkaslouCX4g55Q0thcJvPgwje8-nAXw'
-    })
+    }),
+    AgmDirectionModule,
+    AppRoutingModule   
 
 
   ],
-  providers: [],
+  providers: [GeocodeService, FormService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

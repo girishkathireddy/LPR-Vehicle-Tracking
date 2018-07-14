@@ -2,33 +2,43 @@
 
 <app-nav></app-nav>
 
-<!-- <agm-map [latitude]="lat" [longitude]="lng">
-  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
-</agm-map> -->
 
- <agm-map
-      [latitude]="lat"
-      [longitude]="lng"
-      >
+<app-search></app-search>
 
 
-      <agm-marker
-        *ngFor="let coordinate of coordinates; let i=index"
-        [latitude]="coordinate.lat"
-        [longitude]="coordinate.lng"
-      ></agm-marker>
-      <agm-polyline
-       [visible]="true"
-       [strokeWeight]="3">
-        <agm-polyline-point
-          *ngFor="let coordinate of coordinates; let i=index"
-          [latitude]="coordinate.lat"
-          [longitude]="coordinate.lng">
+<agm-map [latitude]="lat" [longitude]="lng">
+  <agm-direction [origin]="origin" [destination]="destination">
+  </agm-direction>
 
-        </agm-polyline-point>
-      </agm-polyline>
+<!--   <agm-marker 
+      *ngFor="let m of markers; let i = index"
+      (markerClick)="clickedMarker(m.label, i)"
+      [latitude]="m.lat"
+      [longitude]="m.lng"
+      [label]="m.label"
+      [markerDraggable]="m.draggable"
+      (dragEnd)="markerDragEnd(m, $event)">
+      
+    <agm-info-window>
+      <strong>InfoWindow content</strong>
+    </agm-info-window>
+    
+  </agm-marker> -->
 
-     </agm-map>
+<!--     <agm-marker 
+      [latitude]="location?.lat"
+      [longitude]="location?.lng">   
+  </agm-marker> -->
+
+
+  <agm-circle [latitude]="location?.lat" [longitude]="location?.lng" 
+      [radius]="500"
+      [fillColor]="'red'"
+      [editable]="true">
+  </agm-circle>
+
+</agm-map>
+
 <app-information-table></app-information-table>
 
 
