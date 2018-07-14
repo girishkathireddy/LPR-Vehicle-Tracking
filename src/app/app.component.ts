@@ -11,7 +11,7 @@ export class AppComponent {
 
 
 constructor(
-    private geocodeService: GeocodeService,
+        private geocodeService: GeocodeService,
         private ref: ChangeDetectorRef,
         public formService:FormService
   ) {}
@@ -19,16 +19,16 @@ constructor(
 
 
 loading: boolean;
-location: {lat: number, lng: number};
-address = '1049 w 49th st norfolk va';
+lat:any;
+lng:any;
 public origin: {  }
 public destination: { }
 
 
 
-  ngOnInit() {
+ngOnInit() {
    
-        this.formService.onFormSubmitted.subscribe( (formData : any ) => {
+       this.formService.onFormSubmitted.subscribe( (formData : any ) => {
             console.log(formData.src +"Form Data from the Main Component")
             // this.addressToCoordinates(formData.src);
            this.addressToCoordinatesSource(formData.src);
@@ -40,29 +40,45 @@ public destination: { }
 
 
        this.getDirection();
-       this.showLocation();
+       this.getCurrentLocation();
+
+
+
+
+  }
+
+
+   // Current location       
+  getCurrentLocation() {
+    if (window.navigator.geolocation) {
+            window.navigator.geolocation.getCurrentPosition(
+                position => {
+                    // this.geolocationPosition = position,
+                 
+                        this.lat= position.coords.latitude;
+                        this.lng=position.coords.longitude; 
+                },
+                error => {
+                    switch (error.code) {
+                        case 1:
+                            console.log('Permission Denied');
+                            break;
+                        case 2:
+                            console.log('Position Unavailable');
+                            break;
+                        case 3:
+                            console.log('Timeout');
+                            break;
+                    }
+                }
+            );
+        };
+
   }
 
   getDirection() {
     this.origin = { lat: 36.8507689, lng: -76.2858726 }
     this.destination = { lat:  37.5407246, lng: -77.4360481 }
-  }
-
-
-  showLocation() {
-    this.addressToCoordinates(this.address);
-  }
-
-  addressToCoordinates(arg) {
-    this.loading = true;
-    this.geocodeService.geocodeAddress(arg)
-    .subscribe(
-      location => {
-        this.location = location;
-        this.loading = false;
-        this.ref.detectChanges();    
-      }     
-    );     
   }
 
 
