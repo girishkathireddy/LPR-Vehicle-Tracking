@@ -1,5 +1,5 @@
 # AngularLpr
-The reponsive Mockup UI client was aimed to track the current location of the vehicle from source to destination using google maps API. The search can also use the search form to look of directions from source to destination just like regular google maps.
+The responsive Mockup UI client was aimed to track the current location of the vehicle from source to destination using google maps API. The search can also use the search form to look of directions from source to destination just like regular google maps.
 The place autocomplete by Google maps was used to search for an address or specific location.
 
 ## Technologies
