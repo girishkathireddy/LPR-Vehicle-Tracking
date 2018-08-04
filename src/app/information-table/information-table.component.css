@@ -16,18 +16,21 @@ table {
 
 .mat-header-cell, .mat-header-row{
 	border-bottom-color: #fff;
-	border-width: 2px;
+/*	border-width: 2px;
 	border-right-style: solid;
 	border-left-style: solid;
-	text-align: center;
+	text-align: center;*/
+	font-size:1em;
     background-color: #2e3e4047;
 }
 
 .table-wrap{
 	background-color: #111;
+	padding-top: 10px;
+	padding-bottom: 20px;
 }
 
-mat-row, mat-footer-row, td.mat-cell, td.mat-footer-cell{
+/*.mat-row, .mat-footer-row{
 	border-bottom-color: #fff;
 	border-width: 2px;
 	border-right-style: solid;
@@ -35,4 +38,8 @@ mat-row, mat-footer-row, td.mat-cell, td.mat-footer-cell{
 	text-align: center;
     background:linear-gradient(0deg, #fff, #111 10%, #111);
 	
+}*/
+
+.mat-row:hover {
+  background-color: #314041b0;
 }

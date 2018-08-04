@@ -1,6 +1,10 @@
 export class Coordinate {
   name: string;
   position: number;
-  latitude: number;
-  longitude: number;
+  origin: string;
+  destination:string;
+  srclatitude: number;
+  srclongitude: number;
+  destlatitude: number;
+  destlongitude: number;
 }

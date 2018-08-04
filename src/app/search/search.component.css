@@ -1,5 +1,11 @@
 
 
-.container{
+.container-fluid{
 	margin-top: 100px;
+	margin-bottom:20px;
 }
+
+.form-control {
+	height:50px;
+	font-size: 18px;
+	}

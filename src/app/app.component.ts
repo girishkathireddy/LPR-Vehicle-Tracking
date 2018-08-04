@@ -21,25 +21,32 @@ constructor(
 loading: boolean;
 lat:any;
 lng:any;
+public zoom: number;
 public origin: {  }
 public destination: { }
 
 
 
 ngOnInit() {
+
+       this.zoom = 5;
    
        this.formService.onFormSubmitted.subscribe( (formData : any ) => {
-            console.log(formData.src +"Form Data from the Main Component")
+
+            this.origin ={lat:formData.srclat,lng:formData.srclong};
+            this.destination ={lat:formData.destlat,lng:formData.destlong};
+            this.zoom= formData.zoom;
+
             // this.addressToCoordinates(formData.src);
-           this.addressToCoordinatesSource(formData.src);
-           console.log(this.origin);
-            // this.addressToCoordinates(formData.dest);
-           this.addressToCoordinatesDestination(formData.dest);
-             console.log(this.destination)
+           // this.addressToCoordinatesSource(formData.src);
+           // console.log(formData.src + "Main compo");
+           //    console.log(formData.dest + "Main compo");
+           //  // this.addressToCoordinates(formData.dest);
+           // this.addressToCoordinatesDestination(formData.dest);
+           //   console.log(this.destination)
         })
 
 
-       this.getDirection();
        this.getCurrentLocation();
 
 
@@ -76,35 +83,31 @@ ngOnInit() {
 
   }
 
-  getDirection() {
-    this.origin = { lat: 36.8507689, lng: -76.2858726 }
-    this.destination = { lat:  37.5407246, lng: -77.4360481 }
-  }
 
 
-   addressToCoordinatesSource(arg) {
-    this.loading = true;
-    this.geocodeService.geocodeAddress(arg)
-    .subscribe(
-      location => {
-        this.origin = location;
-        this.loading = false;
-        this.ref.detectChanges();    
-      }     
-    );     
-  }
+  //  addressToCoordinatesSource(arg) {
+  //   this.loading = true;
+  //   this.geocodeService.geocodeAddress(arg)
+  //   .subscribe(
+  //     location => {
+  //       this.origin = location;
+  //       this.loading = false;
+  //       this.ref.detectChanges();    
+  //     }     
+  //   );     
+  // }
 
-   addressToCoordinatesDestination(arg) {
-    this.loading = true;
-    this.geocodeService.geocodeAddress(arg)
-    .subscribe(
-      location => {
-        this.destination = location;
-        this.loading = false;
-        this.ref.detectChanges();    
-      }     
-    );     
-  }
+  //  addressToCoordinatesDestination(arg) {
+  //   this.loading = true;
+  //   this.geocodeService.geocodeAddress(arg)
+  //   .subscribe(
+  //     location => {
+  //       this.destination = location;
+  //       this.loading = false;
+  //       this.ref.detectChanges();    
+  //     }     
+  //   );     
+  // }
   
   
 

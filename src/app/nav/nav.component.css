@@ -31,3 +31,7 @@ header .navbar-right {
 header .navbar-default {
     border: none;
 }
+
+#navbar .navbar-right a {
+    font-size:16px;
+}

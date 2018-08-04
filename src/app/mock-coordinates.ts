@@ -2,14 +2,8 @@
 import { Coordinate } from './coordinate';
 
 export const COORDINATES: Coordinate[] = [
-  {position: 1, name: 'Hydrogen', latitude: 1.0079, longitude: 1},
-  {position: 2, name: 'Helium', latitude: 4.0026, longitude: 1},
-  {position: 3, name: 'Lithium', latitude: 6.941, longitude: 1},
-  {position: 4, name: 'Beryllium', latitude: 9.0122, longitude: 1},
-  {position: 5, name: 'Boron', latitude: 10.811, longitude: 1},
-  {position: 6, name: 'Carbon', latitude: 12.0107, longitude: 1},
-  {position: 7, name: 'Nitrogen', latitude: 14.0067, longitude: 1},
-  {position: 8, name: 'Oxygen', latitude: 15.9994, longitude: 1},
-  {position: 9, name: 'Fluorine', latitude: 18.9984, longitude: 1},
-  {position: 10, name: 'Neon', latitude: 20.1797, longitude: 1},
+  {position: 1, name: 'Vehicle-1', origin:'300 Monticello Ave, Norfolk, VA 23510', destination:' 225 Baker St NW, Atlanta, GA 30313',srclatitude: 36.849181, srclongitude: -76.288006,destlatitude:33.763878,destlongitude:-84.395761},
+  {position: 2, name: 'Vehicle-2',origin:'6000 Universal Blvd, Orlando, FL 32819', destination:'3500 Granby St, Norfolk, VA 23504',srclatitude: 28.474322, srclongitude: -81.467821,destlatitude:36.876815,destlongitude:-76.276992},
+  {position: 3, name: 'Vehicle-3',origin:'6700 Azalea Garden Rd, Norfolk, VA 23518', destination:'524 J Clyde Morris Blvd, Newport News, VA 23601',srclatitude: 36.901581, srclongitude: -76.200204,destlatitude:37.069592,destlongitude:-76.479697},
+  {position: 4, name: 'Vehicle-4',origin:'1 Waterside Dr, Norfolk, VA 23510', destination:'717 General Booth Blvd, Virginia Beach, VA 23451',srclatitude: 36.847782, srclongitude: -76.295031,destlatitude:36.821093,destlongitude:-75.983605},
 ];

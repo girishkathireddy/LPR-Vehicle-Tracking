@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { ElementRef, NgModule, NgZone, OnInit, ViewChild } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -17,7 +17,7 @@ import { MatTableModule } from '@angular/material';
 
 //Maps
 import { CommonModule } from '@angular/common';
-import { AgmCoreModule } from '@agm/core';
+import { AgmCoreModule,MapsAPILoader } from '@agm/core';
 
 import { AgmDirectionModule } from 'agm-direction'   // agm-direction
 
@@ -57,7 +57,8 @@ import {FormService} from './form-service';
     CommonModule,
     FormsModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyDVUkaslouCX4g55Q0thcJvPgwje8-nAXw'
+      apiKey: 'Your API Key',
+      libraries: ["places"]
     }),
     AgmDirectionModule,
     AppRoutingModule   
