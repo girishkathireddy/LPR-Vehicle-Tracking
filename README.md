@@ -8,6 +8,8 @@ Angular CLI 6.0.8, TypeScript, Boostrap, CSS,Angular Google Maps, Places autocom
 ```
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
 
+To run the project succesfully you need to place your Google Maps API Key at app.module.ts
+
 ## Development server
 
 Run `npm install` followed by `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
